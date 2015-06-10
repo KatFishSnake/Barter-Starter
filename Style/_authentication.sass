@@ -1,0 +1,150 @@
+//here I write some staff
+
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+=transition($trans)
+  -webkit-transition: $trans
+  -moz-transition: $trans
+  -ms-transition: $trans
+  -o-transition: $trans
+  transition: $trans
+
+=box-shadow($shd)
+  -webkit-box-shadow: $shd
+  -moz-box-shadow: $shd
+  box-shadow: $shd
+
+.authentication
+  padding-top: 150px
+  +transition(all 1s ease 0s)
+
+  .warning
+    position: absolute
+    margin: 12px
+    padding: 14px
+    background: lightpink
+    color: #444
+    +border-radius(2pt)
+    +transition(all 1s ease 0s)
+    +box-shadow(0 3px 8px 1px rgba(0,0,0,0.1))
+    &:before
+      content: ''
+      position: absolute
+      width: 0
+      height: 0
+      border-top: 10px solid transparent
+      border-right: 10px solid lightpink
+      border-bottom: 10px solid transparent
+      top: 8px
+      left: -10px
+
+  .auth_logo
+    width: 200px
+    height: 75px
+    background: transparent url("../Materials/Materials_v2.gif") 50% 0% no-repeat
+    background-size: 100%
+    margin: 0 auto 40px auto
+    opacity: 0.3
+
+  .panel
+    background: white
+    padding: 30px 20px 0 30px
+    margin: 0
+    height: 370px
+    +border-radius(2pt)
+    +transition(all 1s ease 0s)
+    +box-shadow(0 3px 8px 1px rgba(0,0,0,0.1))
+
+
+    label
+      display: block
+      color: rgba(0,0,0,0.4)
+      margin-top: 5px
+      &:nth-child(7)
+        margin-top: 30px
+
+
+    input
+      margin: 5px 0 15px 0
+      width: 89%
+      padding: 10px
+      font-family: "Roboto-Light-Italic", sans-serif
+      outline: none
+      border: none
+      box-shadow: none
+      color: rgba(0,0,0,0.4)
+      font-size: 1em
+      border-bottom: 1px solid rgba(0,0,0,0.1)
+      &:focus
+        font-family: "Roboto-Regular", sans-serif
+        color: #444
+        font-size: 1em
+        border-bottom: 1px solid rgba(68, 168, 222, 0.7)
+
+    .password
+      font-family: "Roboto-Light-Italic", sans-serif
+      font-size: 1em
+      color: rgba(0,0,0,0.2)
+      height: 19px
+
+    button
+      float: right
+      border: none
+      padding: 8px 22px
+      color: white
+      background: #44A8DE
+      font-family: "Roboto-Light", sans-serif
+      margin: 35px 15px 0 0
+      +border-radius(2pt)
+      &:hover
+        background: #47c0f6
+      &:active
+        background: #31759d
+
+  .panel_logIn
+    @extend .panel
+    height: 260px
+
+  .auth_wrapper
+    width: 350px
+    margin: 0 auto
+
+
+  .panel_header
+    padding: 13px 20px 13px 30px
+    background: white
+    margin-bottom: 20px
+    border-left: 6px solid #44A8DE
+    +border-radius(2pt)
+    +box-shadow(0 3px 8px 1px rgba(0,0,0,0.1))
+
+    h2
+      font-family: "Roboto-Regular", sans-serif
+      font-size: 0.9em
+      letter-spacing: 0.4px
+      color: #444
+
+
+  .under_panel
+  padding-left: 15px
+  line-height: 0.5em
+  color: #888888
+  a
+    text-decoration: none
+    font-size: 0.8em
+    color: #888888
+    &:hover
+      text-decoration: underline
+
+
+
+
+
+
+
+
+

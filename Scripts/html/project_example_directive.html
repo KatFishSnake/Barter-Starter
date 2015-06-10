@@ -1,0 +1,22 @@
+
+<div class="prime_project" ng-click="go('/project')">
+    <img class="project_panel_image" ng-src="Materials/example_placeholder/{{ info.big }}" alt="the banner of the project"/>
+    <div class="project_panel_body">
+
+        <div ng-repeat="key in info.tags"><span>{{key}}</span></div>
+
+        <h1>{{info.title}}</h1>
+        <p>{{info.description}}</p>
+    </div>
+    <div class="project_panel_right">
+        <div class="hosted">
+            <span>Hosted by</span>
+            <h4>{{info.host}}</h4>
+            <img ng-src="Materials/example_placeholder/{{ info.small }}" alt="logo of the company host"/>
+        </div>
+        <div class="daysLeft">
+            <h1>{{info.daysLeft}}</h1>
+            <span>Days left</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+
+<!--HEADER-->
+<div class="homepage">
+<header-directive></header-directive>
+
+    <!-- BANNER-->
+    <div class="home_banner_filters">
+    <banner-directive></banner-directive>
+        <!-- FILTERS-->
+        <div class="h_filters_color">
+            <section class="h_filters">
+                <ul>
+                    <!-- todo make all of these ngRepeat and put them as filters-->
+
+                    <li><a href="javascript:void(0)" ng-click="myCtrl.order('title')">User Experience</a></li>
+                    <li><a href="javascript:void(0)" ng-click="myCtrl.order('host')">User Interface</a></li>
+                    <li><a href="javascript:void(0)" ng-click="myCtrl.order('daysLeft')">Front-End Development</a></li>
+                    <li><a href="javascript:void(0)">Back-End Development</a></li>
+                    <li><a href="javascript:void(0)">Marketing</a></li>
+                </ul>
+            </section>
+        </div>
+
+    </div>
+
+
+    <!-- Projects have to be displayed with -->
+    <div class="home_body_projects">
+        <div class="home_body_projects_innercontainer">
+
+            <project-example ng-click="go('/project')" ng-repeat="proj in myCtrl.projects_examples | orderBy: myCtrl.orderByItem" info="proj"></project-example>
+
+        </div>
+    </div>
+</div>
+
+    <!-- FOOTER-->
+    <footer>
+        <p>&copy; 2015, Barter Starter</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(function() {
+            function getPageScroll() {
+                var xScroll, yScroll;
+                if (self.pageYOffset) {
+                    yScroll = self.pageYOffset;
+                    xScroll = self.pageXOffset;
+                } else if (document.documentElement && document.documentElement.scrollTop) {
+                    yScroll = document.documentElement.scrollTop;
+                    xScroll = document.documentElement.scrollLeft;
+                } else if (document.body) {// all other Explorers
+                    yScroll = document.body.scrollTop;
+                    xScroll = document.body.scrollLeft;
+                }
+                return new Array(xScroll, yScroll);
+            }
+
+            $(window).scroll(function () {
+
+                var windowH = $(window).height(),
+                        scrollY = getPageScroll()[1];
+
+                var sY = scrollY + 120;
+                var properScroll = sY.toString();
+
+
+                });
+
+                if (sY >= 300) {
+                    $(".header").css({
+                        backgroundColor: 'rgb(255,255,255)',
+                        boxShadow: "0 0 19px rgba(0,0,0,0.05)"
+                    });
+                    $(".header a").css({
+                        color: '#085071'
+                    });
+                } else {
+                    $(".header").css({
+                        backgroundColor: 'transparent',
+                        boxShadow: "0 0 0px rgba(0,0,0,0.05)"
+                    });
+                    $(".header a").css({
+                        color: '#DDDDDD'
+                    });
+                }
+
+            });
+        });
+    </script>

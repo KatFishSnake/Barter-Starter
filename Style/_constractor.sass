@@ -1,0 +1,768 @@
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+=transition($trans)
+  -webkit-transition: $trans
+  -moz-transition: $trans
+  -ms-transition: $trans
+  -o-transition: $trans
+  transition: $trans
+
+=box-shadow($shd)
+  -webkit-box-shadow: $shd
+  -moz-box-shadow: $shd
+  box-shadow: $shd
+
+@mixin calc($property, $expression)
+  #{$property}: -webkit-calc(#{$expression})
+  #{$property}: calc(#{$expression})
+
+
+.constructor
+  background-color: #f1f1f1
+  padding-top: 90px
+  /*project page*/
+
+  .header .h_logo a
+    color: #085071
+
+  .tools-icon
+    width: 45px
+    height: 32px
+    background: transparent url("../Materials/email-tools-icons.png") 100% 0 no-repeat
+    background-size: 297%
+    margin: 13px auto
+  .main-title
+    font-size: 0.9em
+    color: #ADADAD
+    font-family: "Roboto-Light", sans-serif
+    margin: 0 auto 45px auto
+    vertical-align: 1.2em
+    width: 124px
+  .qanda
+    text-align: center
+  .proj_intro_title
+    h1
+      text-align: center
+      font-family: "Roboto-Light", sans-serif
+      letter-spacing: 1.5px
+      font-size: 2.6em
+      color: #252525
+  .h_logo
+    background: transparent
+    background-size: 100%
+  .h_nav
+    a
+      color: #1f5372
+        +transition(color 0.5s ease 0s)
+
+  .proj_intro_workLine
+    width: 40%
+    margin: 10px auto
+    .proj_intro_workLine_line
+      width: 100%
+      background: lightblue
+      height: 12px
+      border-radius: 10px
+      margin-bottom: 10px
+      box-sizing: border-box
+      padding: 2px
+      div
+        width: 20%
+        background: #78a5da
+        border-bottom-left-radius: 10px
+        border-top-left-radius: 10px
+        height: 8px
+    .proj_intro_workLine_items
+      display: inline-flex
+      width: 100%
+      margin-bottom: 10px
+      .item
+        background: #53a4dc
+        color: white
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        text-align: center
+        box-sizing: border-box
+        padding-top: 15px
+        font-family: "Roboto-Light", sans-serif
+        font-size: 1.1em
+        position: relative
+        margin-left: 15%
+        &:after
+          content: ''
+          position: absolute
+          width: 0
+          height: 0
+          border-left: 10px solid transparent
+          border-right: 10px solid transparent
+          border-bottom: 10px solid #53a4dc
+          top: -7px
+          right: 29%
+      .item:first-child
+        &:before
+          content: ""
+          position: absolute
+          width: 17px
+          height: 17px
+          border-radius: 50%
+          background: #272727 url("../Materials/Materials_v2.gif") 103% 109% no-repeat
+          background-size: 255%
+          top: 0
+          left: 0
+
+  .panel
+    background: white
+    width: 960px
+    margin: 50px auto
+    box-sizing: border-box
+    padding: 30px
+    +border-radius(2pt)
+    +box-shadow(0 3px 8px 1px rgba(0,0,0,0.1))
+    .proj_intro_img_addInfo
+      display: flex
+      img
+        width: 60%
+        height: 500px
+        +border-radius(3pt)
+    .proj_intro_img_addInfo_right
+      width: 40%
+      height: 170px
+      text-align: right
+      padding: 49px 90px 0 0
+      position: relative
+      box-sizing: border-box
+      span
+        font-size: 1.3em
+        font-family: "Roboto-Light", sans-serif
+        text-align: left
+        display: block
+        padding-left: 35%
+      .days_string
+        display: inline-block
+        padding: 0
+        margin-left: -3px
+        font-family: "Roboto-Regular", sans-serif
+        font-size: 1.5em
+        color: #515151
+      h2
+        margin: 10px 0 70px 0
+        text-align: right
+        font-family: "Roboto-Light", sans-serif
+        font-size: 5.5em
+        color: #252525
+        display: inline-block
+      img
+        width: 80px
+        height: 80px
+        margin-left: 18px
+        margin-right: 10px
+        +border-radius(3pt)
+      div
+        display: flex
+        span
+
+          font-size: 0.7em
+          text-align: right
+          padding: 12px 0 5px 0
+        h4
+          margin: 0
+          font-family: "Roboto-Light", sans-serif
+        div
+          width: 60%
+          display: block
+
+
+
+
+    .proj_intro_description
+      font-family: "Roboto-Light", sans-serif
+      margin: 60px 0
+
+
+  .about_team
+    img
+      width: 370px
+      height: 266px
+      display: inline-block
+      +border-radius(3pt)
+    .about_team_title
+      margin: 0 0 11px 0
+      font-family: "Roboto-Light", sans-serif
+
+    .about_team_description
+      display: inline-block
+      width: 571px
+      vertical-align: top
+      box-sizing: border-box
+      padding: 0 0 0 33px
+  .about_team_container
+    display: flex
+    font-family: "Roboto-Light", sans-serif
+
+  .job_list
+    min-height: 200px
+    table
+      width: 100%
+    .item_identical
+      background: #53a4dc
+      color: white
+      width: 50px
+      height: 50px
+      border-radius: 50%
+      text-align: center
+      box-sizing: border-box
+      padding-top: 15px
+      font-family: "Roboto-Light", sans-serif
+      font-size: 1.1em
+      position: relative
+
+    tr:nth-child(2) .item_identical
+      &:before
+        content: ""
+        position: absolute
+        width: 17px
+        height: 17px
+        border-radius: 50%
+        background: #272727 url("../Materials/Materials_v2.gif") 103% 109% no-repeat
+        background-size: 255%
+        top: 0
+        left: 0
+    th
+      padding: 5px 5px 5px 5px
+      box-sizing: border-box
+      background: #f2f2f2
+      border-bottom: 2px solid white
+      border-right: 1px solid white
+      font-family: "Roboto-Light", sans-serif
+    td
+      border-bottom: 2px solid white
+      border-top: 2px solid white
+      border-right: 1px solid white
+
+    td:nth-child(2)
+      div
+        padding: 5px 10px 5px 15px
+        box-sizing: border-box
+        background: #f8f8f8
+        margin-bottom: 3px
+    th:first-child, td:first-child
+      width: 5%
+    td:first-child
+      background: white
+    th:nth-child(2), td:nth-child(2)
+      width: 50%
+    th:nth-child(2), th:nth-child(3)
+      text-align: left
+      padding-left: 15px
+    td:nth-child(2)
+      h3
+        font-family: "Roboto-Light", sans-serif
+        margin: 10px 0 20px 0
+      p
+        margin: 0
+        font-size: 0.8em
+    td:nth-child(3)
+      text-align: center
+      position: relative
+      background: #f8f8f8
+      border-bottom-right-radius: 8px
+      border-top-right-radius: 8px
+      button
+        position: absolute
+        height: 100%
+        width: 50px
+        right: 0
+        top: 0
+        background: #a4d1ed
+        text-align: center
+        border-bottom-right-radius: 8px
+        border-top-right-radius: 8px
+        border: none
+        +transition(background-position 1s ease 0s)
+        &:after
+          content: ""
+          background: transparent url("../Materials/email-tools-icons.png") -31% -10% no-repeat
+          background-size: 144%
+          width: 49px
+          height: 38px
+          position: absolute
+          top: 40%
+          left: 0
+          opacity: 0.3
+
+        a
+          text-decoration: none
+          color: white
+          font-family: "Roboto-Regular", sans-serif
+          position: absolute
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+  .qanda
+    max-width: 960px
+    width: 400px
+    height: 140px
+    box-shadow: none
+    background-color: transparent
+    margin-bottom: 200px
+    h3
+      box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1)
+      background: white
+      height: 73px
+      padding: 26px 0 0 0
+      box-sizing: border-box
+      font-family: "Roboto-light", sans-serif
+    h4
+      font-family: "Roboto-Light", sans-serif
+      font-size: 0.9em
+
+
+//edit, create page
+
+
+.edit-create-Page
+  min-width: 1080px
+  width: 1080px
+  display: flex
+  margin: 0 auto
+  height: 3450px
+  box-sizing: border-box
+
+  h1, h2, h3, h4, h5
+    margin: 0
+  .left-panel
+    width: 20%
+    height: 400px
+    margin-top: 200px
+    +transition(1s ease margin-top)
+
+    .item:nth-child(1)
+      border-left: 4px solid #D41674
+    .item:nth-child(2)
+      border-left: 4px solid #D41674
+    .item:nth-child(3)
+      border-left: 4px solid #F0592B
+    .item:nth-child(4)
+      border-left: 4px solid #F0592B
+    .item:nth-child(5)
+      border-left: 4px solid #085071
+    .item
+      padding: 10px 10px 10px 13px
+      box-sizing: border-box
+      margin: 13px 0
+      background-color: white
+      font-size: 0.8em
+      width: 80%
+      font-family: "Roboto-Regular", sans-serif
+      +border-radius(2pt)
+      +box-shadow(0 3px 8px 1px rgba(0,0,0,0.1))
+
+  .ttl1
+    border-left: 5px solid #D41674
+  .ttl2
+    border-left: 5px solid #D41674
+  .ttl3
+    border-left: 5px solid #F0592B
+  .ttl4
+    border-left: 5px solid #F0592B
+  .ttl5
+    border-left: 5px solid #085071
+
+  .middle-panel
+    width: 60%
+    height: 500px
+    padding: 63px 20px 20px 20px
+    box-sizing: border-box
+    .tools-icon
+      width: 45px
+      height: 45px
+      background: transparent url("../Materials/email-tools-icons.png") 100% 100% no-repeat
+      background-size: 260%
+      margin-bottom: 13px
+      margin-left: 286px
+
+    .add-job-btn
+      width: 50px
+      margin: 30px auto 80px auto
+      button
+        outline: none
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        background: lightblue url("../Materials/plus.png") center center no-repeat
+        background-size: 45%
+        border: none
+        +transition(all 0.1s ease 0s)
+      button:hover
+        background: rgb(115, 179, 200) url("../Materials/plus.png") center center no-repeat
+        background-size: 55%
+      button:active
+        background: rgb(76, 130, 151) url("../Materials/plus.png") center center no-repeat
+        background-size: 40%
+        outline: none
+
+  .panel-on-right-container
+    width: 20%
+    background: transparent
+    margin-top: 220px
+    height: 760px
+    +transition(1s cubic-bezier(0.76, 0.16, 0.04, 1.01) margin-top)
+
+  .panel-on-right
+    width: 100%
+    background: white
+    margin-top: 50px
+    +border-radius(2pt)
+    +box-shadow(0 3px 8px 1px rgba(0,0,0,0.1))
+    box-sizing: border-box
+    padding: 15px
+
+    .project-title
+      line-height: 1em
+      margin-bottom: 6px
+
+    .placeholderImage
+      width: 116.5%
+      height: 203px
+      background: #444444
+      margin: 15px -15px
+    .short-description
+      font-family: "Roboto-Light", sans-serif
+      font-size: 0.8em
+    h1:nth-child(5)
+      margin: 0 0 0 20px
+      font-size: 4.5em
+      font-family: "Roboto-Light", sans-serif
+      display: inline-block
+    h2
+      width: 58px
+      font-size: 1.3em
+      margin-left: 5px
+      display: inline-block
+    span
+      font-family: "Roboto-Light-Italic", sans-serif
+      text-align: center
+      font-size: 1em
+      margin: 0 auto 20px auto
+      display: block
+    .icons
+      width: 50px
+      height: 50px
+      background-color: lightblue
+      box-sizing: border-box
+      border-radius: 50%
+      padding: 14px
+      color: white
+      font-family: "Roboto-light", sans-serif
+      font-size: 1.1em
+      display: inline-block
+    .icons-two
+      margin: 0 14px
+      padding-left: 16px
+    .icons-three
+      margin-bottom: 69px
+    button:nth-child(11)
+      display: block
+      margin: 0 auto
+      padding: 8px 36px
+      font-family: "Roboto", sans-serif
+      font-size: 1.1em
+      color: white
+      background-color: rgb(255, 138, 40)
+      border: none
+      +border-radius(2pt)
+      +box-shadow(0 3px 8px 1px rgba(0,0,0,0.1))
+    button:nth-child(12)
+      display: block
+      margin: 20px auto 0 auto
+      padding: 14px 40px
+      font-family: "Roboto", sans-serif
+      font-size: 1.7em
+      color: white
+      background-color: rgb(255, 138, 40)
+      border: none
+      +border-radius(2pt)
+      +box-shadow(0 3px 8px 1px rgba(0,0,0,0.1))
+
+
+  .editing-panel-middle-title
+    padding: 15px 0 15px 35px
+    box-sizing: border-box
+    margin-bottom: 10px
+    margin-top: 50px
+    background: white
+    +border-radius(2pt)
+    +box-shadow(0 3px 8px 1px rgba(0,0,0,0.1))
+    h2
+      font-size: 1em
+
+  .main-title
+    font-size: 0.9em
+    color: #ADADAD
+    font-family: "Roboto-Light", sans-serif
+    margin-bottom: 45px
+    margin-left: 230px
+    vertical-align: 1.2em
+    width: 165px
+
+  .editing-panel-middle
+    background: white
+    padding: 60px 30px 60px 60px
+    box-sizing: border-box
+    +border-radius(2pt)
+    +box-shadow(0 3px 8px 1px rgba(0,0,0,0.1))
+
+    .textarea-job
+      margin-bottom: 50px !important
+
+    .type-of-job-label
+      color: rgb(111, 111, 111)
+    .type-of-job-container
+      padding-top: 30px
+      display: flex
+      width: 100%
+      .type-of-job
+        width: 25%
+        text-align: center
+      h3
+        font-weight: inherit
+        font-size: 0.8em
+        height: 50px
+      .job-icon
+        width: 60px
+        height: 60px
+        box-sizing: border-box
+        padding: 19px 10px 10px 10px
+        background-color: lightblue
+        margin: 10px auto
+        color: white
+        border-radius: 50%
+        font-size: 1.2em
+      input[type="radio"]
+        -webkit-transform: scale(1.6)
+        -moz-transform: scale(1.6)
+        -ms-transform: scale(1.6)
+        -o-transform: scale(1.6)
+        transform: scale(1.6)
+
+
+
+    small
+      display: block
+      color: rgb(165, 165, 165)
+
+    form lable:nth-child(5)
+      margin-top: 25px
+
+    lable
+      font-family: "Roboto", sans-serif
+      font-size: 1.08em
+      display: block
+      margin: 10px 0 0 0
+      color: #AEAEAE
+    input
+      border: none
+      outline: none
+      background-color: white
+      font-size: 1em
+      padding: 15px 10px 9px 7px
+      width: 90%
+      display: block
+      border-bottom: 1.5px solid #E7E7E7
+      font-family: "Roboto-Light-Italic", sans-serif
+      opacity: 0.6
+    input:focus
+      opacity: 1
+    textarea
+      border: none
+      outline: none
+      background-color: white
+      font-size: 1em
+      padding: 15px 10px 9px 7px
+      width: 90%
+      overflow: hidden
+      display: block
+      border-bottom: 1.5px solid #E7E7E7
+      font-family: "Roboto-Light-Italic", sans-serif
+      resize: vertical
+      opacity: 0.6
+    textarea:focus
+      opacity: 1
+    .input1
+      margin-bottom: 4em
+    .input2
+      margin-bottom: 1em
+      padding: 16px
+      box-sizing: border-box
+    .input3
+      margin-bottom: 3.5em
+    .container-for-count
+      display: inline-block
+      position: relative
+      width: 195px
+      height: 55px
+      margin-left: 101px
+    .count
+      width: 50px
+      height: 50px
+      background-color: lightblue
+      text-align: center
+      padding: 13px
+      box-sizing: border-box
+      border-radius: 50%
+      position: absolute
+      top: 24px
+      border: none
+    .count-right
+      right: 0
+      background: lightblue url("../Materials/Materials_v2.gif") 36% 81% no-repeat
+      background-size: 248%
+    .count-left
+      background: lightblue url("../Materials/Materials_v2.gif") -11% 104% no-repeat
+      background-size: 248%
+      left: 0
+
+    .countNumber
+      font-family: "Roboto-Light", sans-serif
+      font-size: 4em
+      letter-spacing: -3px
+      width: 80px
+      position: absolute
+      color: #272727
+      left: 61px
+      top: 10px
+      margin: 0
+    .description
+      font-family: "Roboto", sans-serif
+      font-size: 1.08em
+      display: inline-block
+      margin: 0
+      color: #AEAEAE
+      font-weight: inherit
+  .download-welcoming-image
+    height: 430px
+  .email-for-contributors
+    margin-top: 40px !important
+  .job-reward-panel
+    position: relative
+  .job-reward-panel .closer
+    width: 100%
+    height: 100%
+    background: rgba(255, 255, 255, 0.81) url("../../Programming/Materials/email-tools-icons.png") -32% 200% no-repeat
+    background-size: 160%
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 50
+
+/*  on/off switch*/
+
+.switchJobCompletion
+  top: -17px
+  right: -100px
+  .onoffswitch-switch
+    background-color: #2C779E
+  .onoffswitch-inner:before
+    background-color: #6BE0EF
+  .onoffswitch-inner:after
+    background-color: #529DBE
+
+.onoffswitch
+  position: relative
+  width: 96px
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  -webkit-transform: scale(0.6)
+  -moz-transform: scale(0.6)
+  -ms-transform: scale(0.6)
+  -o-transform: scale(0.6)
+  transform: scale(0.6)
+  float: right
+  margin-right: 100px
+  margin-top: -10px
+
+
+.onoffswitch-checkbox
+  display: none !important
+
+.onoffswitch-label
+  display: block
+  overflow: hidden
+  cursor: pointer
+  border: 2px solid #FFFFFF
+  border-radius: 50px
+
+.onoffswitch-inner
+  display: block
+  width: 200%
+  margin-left: -100%
+  -moz-transition: margin 0.3s ease-in 0s
+  -webkit-transition: margin 0.3s ease-in 0s
+  -o-transition: margin 0.3s ease-in 0s
+  transition: margin 0.3s ease-in 0s
+
+.onoffswitch-inner:before, .onoffswitch-inner:after
+  display: block
+  float: left
+  width: 50%
+  height: 38px
+  padding: 0
+  line-height: 38px
+  font-size: 14px
+  color: white
+  font-family: Trebuchet, Arial, sans-serif
+  font-weight: bold
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+.onoffswitch-inner:before
+  content: "ON"
+  padding-left: 10px
+  background-color: #34A7C1
+  color: #FFFFFF
+
+.onoffswitch-inner:after
+  content: "OFF"
+  padding-right: 10px
+  background-color: #71D1E6
+  color: #FFFFFF
+  text-align: right
+
+.onoffswitch-switch
+  display: block
+  width: 48px
+  margin: -5px
+  background: #2B91A8
+  border: 2px solid #FFFFFF
+  border-radius: 50px
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 54px
+  -moz-transition: all 0.3s ease-in 0s
+  -webkit-transition: all 0.3s ease-in 0s
+  -o-transition: all 0.3s ease-in 0s
+  transition: all 0.3s ease-in 0s
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner
+  margin-left: 0
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch
+  right: 0
+
+
+
+
+footer
+  width: 150px
+  text-align: center
+  height: 40px
+  margin: 150px auto 10px auto

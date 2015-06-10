@@ -1,0 +1,70 @@
+<div class="editing-panel-middle-title ttl5">
+    <h2>Job / Reward</h2>
+
+    <div class="onoffswitch switchJobCompletion">
+        <input type="checkbox" name="onoffswitch"
+               ng-model="info.jobReward[0].completed"
+               ng-true-value="true"
+               ng-false-value="false"
+               class="onoffswitch-checkbox"
+               id="switchJobCompletion">
+        <label class="onoffswitch-label" for="switchJobCompletion">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+        </label>
+    </div>
+</div>
+
+<div class="editing-panel-middle job-reward-panel">
+    <div class="closer"
+         ng-show="info.jobReward[0].completed"></div>
+    <lable>Summary</lable>
+    <input class="input1" type="text"
+           placeholder="ex: Proper Teddy Bear generator engine based on FNG technology"
+           ng-required="true"
+           ng-model="info.jobReward[0].jobSummary"/>
+    <lable>Task brief</lable>
+                <textarea class="input2"
+                          type="text"
+                          placeholder="ex: Please help us write 'Proper teddy bear generator' engine with TBG technology, you are going to work in Slack and Skype with other internal team, min 12 hours a week and min requirements knowledge of C#, JS, and Illustrator"
+                          ng-required="true"
+                          ng-model="info.jobReward[0].jobBrief">
+                </textarea>
+    <lable>Reward</lable>
+                <textarea class="input2 textarea-job" type="text"
+                          placeholder="ex: 2% equity share of Teddy Bear Production, London or 1000$, or unlimited usage of bear generator"
+                          ng-required="true"
+                          ng-model="info.jobReward[0].jobReward">{{info.jobReward[0].price}}</textarea>
+    <h4 class="description">Can reward be negotiated?</h4>
+
+    <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch"
+               ng-model="info.jobReward[0].negotiatable"
+               ng-true-value="true"
+               ng-false-value="false"
+               class="onoffswitch-checkbox"
+               id="switchNegotiation"
+               ng-model="info.jobReward[0].negotiated">
+        <label class="onoffswitch-label" for="switchNegotiation">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+        </label>
+    </div>
+
+    <lable class="email-for-contributors">E-mail for contributors</lable>
+    <input class="input1" type="email" placeholder="ex: sexybenfranklin@mail.org" ng-model="info.jobReward[0].jobEmail" ng-required="true"/>
+
+    <label class="type-of-job-label">Type of work</label>
+    <small>What type of skills this work require the most</small>
+
+    <div class="type-of-job-container">
+
+        <div class="type-of-job" ng-repeat="tag in myCtrl.jobTypes">
+            <h3>{{tag.title}}</h3>
+            <div class="job-icon">{{tag.tag}}</div>
+            <input type="radio" name="chooseJob" ng-model="info.jobReward[0].jobType" value="{{tag.tag}}"/>
+        </div>
+
+    </div>
+
+</div>

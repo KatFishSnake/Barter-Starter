@@ -1,0 +1,175 @@
+
+<!--HEADER-->
+<header-directive></header-directive>
+<div class="constructor">
+    <div class="tools-icon"></div>
+    <h3 class="main-title">Preview the Project</h3>
+
+    <div class="panel proj_intro">
+        <div class="proj_intro_title">
+            <h1>The gamified website for the client</h1>
+            <div class="proj_intro_workLine">
+                <div class="proj_intro_workLine_line">
+                    <div></div>
+                </div>
+                <div class="proj_intro_workLine_items">
+                    <div class="item">UX</div>
+                    <div class="item">UI</div>
+                    <div class="item">FE</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="proj_intro_img_addInfo">
+            <img src="Materials/example_placeholder/example3.png" alt="introductory image"/>
+
+            <div class="proj_intro_img_addInfo_right">
+                <span>Time Left</span>
+                <h2>17</h2>
+                <span class="days_string">days</span>
+                <div>
+                    <div>
+                        <span>Hosted by</span>
+                        <h4>Snap.svg</h4>
+                    </div>
+                    <img src="Materials/example_placeholder/example_logo2.png" alt="logo of host"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="proj_intro_description">
+            <p>We are small interactive agency and dont have enough resources to complete the project,
+                if you are willing to work remotely or inhouse with awesome pros like you...</p>
+        </div>
+    </div>
+
+    <div class="panel about_team">
+        <h2 class="about_team_title">About Us</h2>
+
+        <div class="about_team_container">
+            <img src="Materials/teamPhoto.jpg" alt="meet the team!"/>
+            <div class="about_team_description">
+                <p>The project was originally initiated by Alex Cho, the creative visionary
+                    and one of the cofounders of Unix Interactive.
+                    <br/>We decided that the art direction and the strategy will lay on the
+                    shoulders of our team and as an experiment the major design and
+                    development part will be outsourced to webservice like Bulletin.
+                    People involve in the creation of the website:
+                    <br/>
+                    <br/>Alex Cho -- creative director, project manager
+                    <br/>Greg Simons -- lead developer, code reviewer
+                    <br/>Sasha Moll -- public relationship, email moderation
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel job_list">
+        <table>
+            <tr>
+                <th>Skill</th>
+                <th>Task</th>
+                <th>Reward</th>
+            </tr>
+            <tr>
+                <td><div class="item_identical">UX</div></td>
+                <td>
+                    <div>
+                        <h3>Site Map and Wireframes</h3>
+                        <p>We would like you to do site map and wireframing going along
+                            with the project brife and the research results we got..</p>
+                    </div>
+                    <div>
+                        <h3>Site Map and Wireframes</h3>
+                        <p>We would like you to do site map and wireframing going along
+                            with the project brife and the research results we got..</p>
+                    </div>
+                </td>
+                <td>1 year subscription or 300$ <br/> (the reward can be negotiated)
+                    <button ng-click="alertify.success('Email is sent')"><a href="javascript:void(0)"></a></button>
+                </td>
+            </tr>
+            <tr>
+                <td><div class="item_identical">UI</div></td>
+                <td>
+                    <div>
+                        <h3>Global Elements and Standard Set Design</h3>
+                        <p>We would like you to do site map and wireframing going along
+                            with the project brife and the research results we got..</p>
+                    </div>
+                </td>
+                <td>1 year subscription or 300$ <br/> (the reward can be negotiated)
+                    <button ng-click="alertify.success('Email is sent')"><a href="javascript:void(0)"></a></button>
+                </td>
+            </tr>
+            <tr>
+                <td><div class="item_identical">FE</div></td>
+                <td>
+                    <div>
+                        <h3>Developed Prototype</h3>
+                        <p>We would like you to use Bootstrap, HTML5, SASS, JQuery
+                            and AngularJS for transitions, pitch variations are
+                            acceptable...</p>
+                    </div>
+                </td>
+                <td>1 year subscription or 300$
+                    <button ng-click="alertify.success('Email is sent')"><a href="javascript:void(0)"></a></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="panel qanda">
+        <h4>All questions send to the following address:</h4>
+        <h3>bulletin-jobs@unixinteractive.by</h3>
+    </div>
+
+
+</div>
+<!-- FOOTER-->
+<footer>
+    <p>&copy; 2015, Barter Starter</p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(function() {
+        function getPageScroll() {
+            var xScroll, yScroll;
+            if (self.pageYOffset) {
+                yScroll = self.pageYOffset;
+                xScroll = self.pageXOffset;
+            } else if (document.documentElement && document.documentElement.scrollTop) {
+                yScroll = document.documentElement.scrollTop;
+                xScroll = document.documentElement.scrollLeft;
+            } else if (document.body) {// all other Explorers
+                yScroll = document.body.scrollTop;
+                xScroll = document.body.scrollLeft;
+            }
+            return new Array(xScroll, yScroll);
+        }
+
+        $(window).scroll(function () {
+
+            var windowH = $(window).height(),
+                    scrollY = getPageScroll()[1];
+
+            var sY = scrollY + 120;
+            var properScroll = sY.toString();
+
+            if (sY >= 300) {
+                $(".header").css({
+                    backgroundColor: 'rgb(255,255,255)',
+                    boxShadow: "0 0 19px rgba(0,0,0,0.05)"
+                });
+            } else {
+                $(".header").css({
+                    backgroundColor: 'transparent',
+                    boxShadow: "0 0 0px rgba(0,0,0,0.05)"
+                });
+            }
+
+        });
+    });
+</script>

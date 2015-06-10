@@ -1,0 +1,64 @@
+<div class="authentication">
+<div class="auth_wrapper">
+    <div class="auth_logo"></div>
+
+    <div class="cont_forChanges">
+    <div class="changing_content_signUp">
+        <div class="panel_header">
+            <h2>Registration</h2>
+        </div>
+
+        <div class="panel">
+
+            <form id="signUp_form" ng-submit="authCtrl.submit(signUp_form)" name="signUp_form">
+                <label for="username">Username</label>
+                <input name="uname"
+                       id="username"
+                       placeholder="ex.sexybenfranklin"
+                       type="text"
+                       ng-model="authCtrl.username"
+                       required
+                       ng-minlength="5"/>
+                <span ng-cloak="true" class="warning"  ng-show="signUp_form.uname.$error.required && submitted">This is the required field</span>
+                <span ng-cloak="true" class="warning"  ng-show="signUp_form.uname.$error.minlength && submitted">Minimum is 5 characters</span>
+                <br/>
+                <label for="email">E-mail</label>
+                <input name="email"
+                       id="email"
+                       placeholder ="ex.sexybenfranklin@mail.ca"
+                       type="email"
+                       ng-model="authCtrl.userEmail"
+                       required />
+                <span ng-cloak="true" class="warning" ng-show="signUp_form.email.$error.required && submitted">This is the required field</span>
+                <span ng-cloak="true" class="warning" ng-show="signUp_form.email.$error.email && submitted">It is not valid email</span>
+                <br/>
+                <label for="password">Password</label>
+                <input name="passward"
+                       class="password"
+                       id="password"
+                       placeholder ="ex.password1234"
+                       type="password"
+                       ng-model="authCtrl.password"
+                       required
+                       ng-minlength="8"/>
+                <span ng-cloak="true" class="warning" ng-show="signUp_form.passward.$error.required && submitted">This is the required field</span>
+                <span ng-cloak="true" class="warning" ng-show="signUp_form.passward.$error.minlength && submitted">Minimum is 8 characters</span>
+
+                <button type="submit" ng-click="submitted = true, go('/home')">Register</button>
+            </form>
+
+        </div>
+
+        <div class="under_panel">
+            <p class="under_panel_firstLine"><a href="#/logIn">Log In</a>/<a href="javascript:void(0)">Retrieve the password</a></p>
+            <p class="under_panel_secondLine"><a href="#/home"><-- Home page</a></p>
+        </div>
+    </div>
+    </div>
+
+</div>
+</div>
+<!-- FOOTER-->
+<footer>
+    <p>&copy; 2015, Barter Starter</p>
+</footer>

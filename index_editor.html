@@ -1,0 +1,206 @@
+
+<!--HEADER-->
+<div class="editor-header">
+<header-directive></header-directive>
+</div>
+<!--<div ng-view class="view-animate"></div>-->
+
+<div class="edit-create-Page">
+    <!-- todo set up proper items animation on scroll-->
+    <!-- todo fix issues with dropzone-->
+    <!-- todo fix the height of right panel to make it dynamic instd of static as it is now-->
+    <!-- todo html css job put it in a directive to generate it with btn tap-->
+    <!-- todo finish html css of the page-->
+
+    <!-- PANEL ON THE LEFT-->
+    <div class="left-panel">
+        <div ng-repeat="item in myCtrl.items"
+             class="item">{{item}}
+        </div>
+    </div>
+
+
+    <div class="middle-panel">
+        <div class="tools-icon"></div>
+        <h3 class="main-title">Create & Edit your Project</h3>
+
+
+        <!-- GENERAL INFORMATION PANEL-->
+        <div class="editing-panel-middle-title ttl1">
+            <h2>Project Intro duction</h2>
+        </div>
+        <div class="editing-panel-middle">
+            <form action="">
+                <lable>Project Title</lable>
+                <input class="input1" type="text"
+                       ng-model="myCtrl.projectConstractor.title"
+                       placeholder="ex.Amazing Placeholder for it"
+                       ng-required="true"/>
+                <lable>Project SubTitle</lable>
+                <input class="input2" type="text"
+                       ng-model="myCtrl.projectConstractor.subtitle"
+                       placeholder="ex.Amazing Placeholder for it"
+                       ng-required="true"/>
+                <lable>Description</lable>
+                <textarea class="input2" type="text"
+                          ng-model="myCtrl.projectConstractor.description"
+                          placeholder="ex: Please help us to create an amazing website to generate unique Teddy Bear widgets/ illustration"
+                          ng-required="true"></textarea>
+                <lable>Contact email for Q&A</lable>
+                <input class="input3" type="text"
+                       ng-model="myCtrl.projectConstractor.qnaEmail"
+                       placeholder="ex: sexybenfranklin@mail.org"
+                       ng-required="true"/>
+                <h4 class="description">Days left for the project</h4>
+                <div class="container-for-count">
+                    <button class="count count-left"
+                            ng-click="myCtrl.minusDays()"
+                            onclick="event.preventDefault()"
+                            onkeydown="javascript:void(0)"></button>
+                    <h4 class="countNumber" ng-model="myCtrl.projectConstractor.countDays" ng-bind="myCtrl.projectConstractor.countDays"></h4>
+                    <button class="count count-right"
+                            ng-click="myCtrl.plusDays()"
+                            onclick="event.preventDefault()"
+                            onkeydown="javascript:void(0)"></button>
+                </div>
+            </form>
+        </div>
+
+
+
+
+        <!-- DROPZONE-->
+        <div class="editing-panel-middle-title ttl2">
+            <h2>Welcoming Image</h2>
+        </div>
+        <div class="editing-panel-middle download-welcoming-image">
+            <!--<form class="dropzone"-->
+                  <!--id="staff">-->
+                <!--<div class="fallback">-->
+                    <!--<input name="file" type="file" multiple />-->
+                <!--</div>-->
+            <!--</form>-->
+            <!--<button class="btn-for-loading" type="submit">Submit img</button>-->
+        </div>
+
+
+
+
+        <!-- ABOUT YOU PANEL-->
+        <div class="editing-panel-middle-title ttl3">
+            <h2>About you</h2>
+        </div>
+        <div class="editing-panel-middle">
+            <form action="">
+                <lable>Project initiated by</lable>
+                <input class="input1" type="text"
+                       placeholder="ex: Ted, the buddy of mine"
+                       ng-required="true" ng-model="myCtrl.projectConstractor.teamLeaders"/>
+                <lable>A little about you</lable>
+                <textarea class="input2" type="text"
+                          placeholder="ex: Please help us to create an amazing website to generate unique Teddy Bear widgets/ illustration"
+                          ng-required="true"
+                          ng-model="myCtrl.projectConstractor.teamDescription"></textarea>
+            </form>
+        </div>
+
+
+
+
+        <!-- TEAM DESCRIPTION PANEL-->
+        <div class="editing-panel-middle-title ttl4">
+            <h2>Team Greeting</h2>
+        </div>
+        <div class="editing-panel-middle download-welcoming-image"></div>
+
+
+        <!-- TEAM REWARD DESCRIPTION-->
+        <task-panel info="myCtrl.projectConstractor"></task-panel>
+
+        <div class="add-job-btn">
+            <button></button>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- PANEL ON THE RIGHT-->
+    <div class="panel-on-right-container">
+        <div class="panel-on-right">
+            <h1 class="project-title" >{{myCtrl.projectConstractor.title}}</h1>
+            <h4>{{myCtrl.projectConstractor.subtitle}}</h4>
+
+            <div class="placeholderImage"></div>
+            <p class="short-description">
+                {{myCtrl.projectConstractor.description}}
+            </p>
+            <h1>{{myCtrl.projectConstractor.countDays}}</h1>
+            <h2>Days left</h2><span>{{myCtrl.projectConstractor.qnaEmail}}</span>
+            <div class="icons icons-one">UX</div>
+            <div class="icons icons-two">UI</div>
+            <div class="icons icons-three">FE</div>
+            <button ng-click="myCtrl.previewObj()">SAVE</button>
+            <button ng-click="myCtrl.addProject()"><a href="#/home" style="text-decoration: none; color: #ffffff">Publish</a></button>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<!-- FOOTER-->
+<footer>
+    <p>&copy; 2015, Barter Starter</p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(function(){
+        console.log('one');
+        function getPageScroll() {
+            var xScroll, yScroll;
+            if (self.pageYOffset) {
+                yScroll = self.pageYOffset;
+                xScroll = self.pageXOffset;
+            } else if (document.documentElement && document.documentElement.scrollTop) {
+                yScroll = document.documentElement.scrollTop;
+                xScroll = document.documentElement.scrollLeft;
+            } else if (document.body) {// all other Explorers
+                yScroll = document.body.scrollTop;
+                xScroll = document.body.scrollLeft;
+            }
+            return new Array(xScroll,yScroll);
+        }
+        $(window).scroll(function () {
+
+            var windowH = $(window).height(),
+                    scrollY = getPageScroll()[1];
+
+            var sY = scrollY + 120;
+            var properScroll = sY.toString();
+
+            console.log(properScroll);
+            $(".panel-on-right").css("margin-top", properScroll+"px");
+            $(".left-panel").css("margin-top", properScroll+"px");
+            if(sY>=300){
+                $(".header").css({
+                    backgroundColor: 'rgb(255,255,255)',
+                    boxShadow: "0 0 19px rgba(0,0,0,0.05)"
+                });
+            }else{
+                $(".header").css({
+                    backgroundColor: 'transparent',
+                    boxShadow: "0 0 0px rgba(0,0,0,0.05)"
+                });
+            }
+
+        });
+
+
+    });
+
+</script>
+

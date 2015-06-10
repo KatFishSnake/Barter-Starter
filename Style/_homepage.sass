@@ -1,0 +1,276 @@
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+=transition($trans)
+  -webkit-transition: $trans
+  -moz-transition: $trans
+  -ms-transition: $trans
+  -o-transition: $trans
+  transition: $trans
+
+=box-shadow($shd)
+  -webkit-box-shadow: $shd
+  -moz-box-shadow: $shd
+  box-shadow: $shd
+
+@mixin calc($property, $expression)
+  #{$property}: -webkit-calc(#{$expression})
+  #{$property}: calc(#{$expression})
+
+
+.header
+  width: 100%
+  height: 65px
+  position: fixed
+  top: 0
+  z-index: 999
+  +transition(all 0.6s ease 0s)
+  .h_innercontainer
+    padding: 15px 5% 5px 5%
+
+  .h_logo
+    background-size: 100%
+    width: 130px
+    height: 50px
+    display: inline-block
+    float: left
+    a
+      color: rgb(215, 215, 215)
+      font-family: "Proxima-Nova", sans-serif
+      font-size: 1.7em
+      line-height: 0.4em
+      text-decoration: none
+      +transition(color 0.5s ease 0s)
+
+  .h_nav
+    display: inline-block
+    @include calc(width, "100% - 130px")
+    float: left
+    padding: 10px 0 0 5%
+    box-sizing: border-box
+
+    li:nth-child(2), li:nth-child(3)
+      float: right
+      padding: 0 20px
+
+    li
+      list-style: none
+      display: inline-block
+    a
+      text-decoration: none
+      font-family: Montserrat, sans-serif
+      font-size: 1em
+      color: #e8e8e8
+      &:hover
+        color: #f08a4a !important
+      &:active
+        color: #a75a35 !important
+
+
+.homepage
+  .home_banner_filters
+    width: 100%
+    .h_banner_color
+      width: 100%
+      height: 800px
+      position: relative
+      .floating_colors
+        position: absolute
+        z-index: -10
+        display: inline-flex
+        width: 100%
+        height: 800px
+      .color_left, .color_right, .color_center
+        height: 800px
+      .color_left, .color_right
+        width: 20%
+        background: #1f5372
+      .color_center
+        width: 60%
+        background: #1e5070
+
+
+    .h_filters_color
+      width: 100%
+      background: #53a4dc
+      height: 70px
+
+    .h_banner, .h_filters
+      max-width: 960px
+      margin: 0 auto
+    .h_banner
+      padding-top: 100px
+      h3
+        color: #53a4dc
+        font-size: 2em
+        margin: 5px
+      h1
+        color: #8dc8e5
+        font-size: 5em
+        margin: 0
+
+    .center_forButtons
+      width: 580px
+      margin: 75px auto 0 auto
+      button
+        background: #f08a4a
+        outline: none
+        border: none
+        padding: 18px 1px
+        border-radius: 2pt
+        margin: 0 6px
+        +box-shadow(0 5px 23px 0 rgba(0,0,0,0.2))
+        +transition(box-shadow 0.3s ease)
+
+        &:hover
+          background: #ff984b
+          box-shadow: none
+        &:active
+          background: #ab6036
+          box-shadow: none
+
+      button:last-child
+        padding: 18px 4px
+      a
+        text-decoration: none
+        color: white
+        font-family: 'Roboto-Bold', sans-serif
+        font-size: 1.3em
+        padding: 18px 49px
+      i
+        font-size: 0.9em
+        color: rgba(255, 255, 255, 0.7)
+
+    .h_filters
+      padding-top: 24px
+      ul
+        width: 100%
+        list-style: none
+        display: inline-flex
+        flex-wrap: nowrap
+        justify-content: center
+
+      li
+        list-style: none
+        padding: 0 10px
+        text-align: center
+        border-left: 1px solid rgba(255,255,255,0.3)
+
+      a
+        color: white
+        text-decoration: none
+        &:hover
+          color: #3e3e3e
+        &:active
+          color: #000000
+  .home_body_projects
+    width: 100%
+    .home_body_projects_innercontainer
+      max-width: 960px
+      margin: 0 auto
+      padding: 50px 30px
+
+    .proj_placeholder
+      width: 100%
+      height: 190px
+      background: white
+      margin: 10px 0
+      +border-radius(2pt)
+      +box-shadow(0 3px 8px 1px rgba(0,0,0,0.1))
+
+    .prime_project
+      width: 100%
+      height: 190px
+      background: white
+      margin: 10px 0
+      padding: 10px
+      display: inline-flex
+      flex-wrap: nowrap
+      justify-content: center
+      box-sizing: border-box
+      +border-radius(2pt)
+      +box-shadow(0 3px 8px 1px rgba(0,0,0,0.1))
+
+      &:hover
+        background-color: #efefef
+        cursor: pointer
+      .project_panel_image
+        width: 20%
+        height: 170px
+      .project_panel_body
+        width: 60%
+        height: 170px
+        padding: 10px 5px 0 10px
+        div
+          display: inline-block
+          span
+            padding: 1px 5px
+            margin: 0 4px 0 0
+            color: white
+            background-color: #3d8896
+            font-family: "Roboto-Light", sans-serif
+            font-size: 0.8em
+            +border-radius(2pt)
+        h1
+          margin: 5px 0 0 0
+          color: #1F1F1F
+          font-family: "Roboto-Light", sans-serif
+          font-size: 1.5em
+        p
+          margin-top: 8px
+          font-family: "Roboto-Light", sans-serif
+          font-size: 1em
+
+      .project_panel_right
+        width: 20%
+        height: 170px
+        text-align: right
+        padding: 10px 25px 0 0
+        position: relative
+        span:first-child
+          font-size: 0.7em
+          text-align: right
+          display: block
+          width: calc(100% - 60px)
+        .hosted
+          width: 100%
+          position: relative
+        .daysLeft
+          width: 100%
+          position: absolute
+          bottom: 20px
+          right: 25px
+          opacity: 0.7
+        h4
+          margin: 0
+          text-align: right
+          font-family: "Roboto-Light", sans-serif
+          @include calc(width, "100% - 60px")
+          font-size: 0.8em
+        img
+          width: 50px
+          height: 50px
+          text-align: right
+          position: absolute
+          top: 0
+          right: 0
+        h1
+          margin: 0
+          font-size: 3em
+          height: 51px
+          clear: both
+          font-family: "Roboto-Light", sans-serif
+
+
+
+
+
+footer
+  width: 100%
+  text-align: center
+  font-size: 0.7em
+  color: rgb(148, 148, 148)
+  font-family: Roboto-Light

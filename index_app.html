@@ -1,0 +1,123 @@
+<!doctype html>
+<html xmlns:javascript="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Project Page page</title>
+    <meta name="description" content="Tool to connect professionals and companies">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="Style/Main_style.css"/>
+
+    <link rel="stylesheet" href="Style/font-awesome-animation.min.css">
+    <link rel="stylesheet" href="libs/dropzone/dropzone.css" type="text/css"/>
+    <link rel="stylesheet" href="libs/alertify/themes/alertify.bootstrap.css"/>
+    <link rel="stylesheet" href="libs/alertify/themes/alertify.core.css"/>
+    <link rel="stylesheet" href="libs/alertify/themes/alertify.default.css"/>
+
+</head>
+
+<body ng-app="Myapp" style="background-color: #efefef">
+
+<ng-view></ng-view>
+
+<!--angular libs-->
+<script src="libs/angular/angular.min.js"></script>
+<script src="libs/angular/angular-route.min.js"></script>
+<script src="libs/angular/angular-animate.min.js"></script>
+
+<!-- Additions-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="libs/dropzone/dropzone.js"></script>
+<script src="libs/alertify/lib/alertify.min.js"></script>
+
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
+
+<!--Scripts-->
+<script src="Scripts/app.js"></script>
+<script src="Scripts/controllers/mainController.js"></script>
+<script src="Scripts/directives/project_directive.js"></script>
+
+
+<script>
+    $(function(){
+        console.log('one');
+        function getPageScroll() {
+            var xScroll, yScroll;
+            if (self.pageYOffset) {
+                yScroll = self.pageYOffset;
+                xScroll = self.pageXOffset;
+            } else if (document.documentElement && document.documentElement.scrollTop) {
+                yScroll = document.documentElement.scrollTop;
+                xScroll = document.documentElement.scrollLeft;
+            } else if (document.body) {// all other Explorers
+                yScroll = document.body.scrollTop;
+                xScroll = document.body.scrollLeft;
+            }
+            return new Array(xScroll,yScroll);
+        }
+        $(window).scroll(function () {
+
+            var windowH = $(window).height(),
+                    scrollY = getPageScroll()[1];
+
+            var sY = scrollY + 120;
+            var properScroll = sY.toString();
+
+            console.log(properScroll);
+            $(".panel-on-right-container").css("margin-top", properScroll+"px");
+            $(".left-panel").css("margin-top", properScroll+"px");
+            if(sY>=300){
+                $(".header").css({
+                    backgroundColor: 'rgb(255,255,255)',
+                    boxShadow: "0 0 19px rgba(0,0,0,0.05)"
+                });
+                $(".header a").css({
+                    color: '#085071'
+                });
+            }else{
+                $(".header").css({
+                    backgroundColor: 'transparent',
+                    boxShadow: "0 0 0px rgba(0,0,0,0.05)"
+                });
+                $(".header a").css({
+                    color: 'rgb(215, 215, 215)'
+                });
+            }
+
+        });
+
+//        DROPZONE JS STAFF
+//
+//        $("#staff").dropzone({ url: "/Materials/dropzonefiles/post" });
+//        Dropzone.options.staff = {
+//            // The configuration we've talked about above
+//            autoProcessQueue: false,
+//            uploadMultiple: false,
+//            maxFiles: 100,
+//            createImageThumbnail: false
+//        }
+        console.log('two');
+    });
+
+</script>
+
+
+<!-- Google Analytics-->
+<!--<script>-->
+    <!--(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
+        <!--(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
+            <!--m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
+    <!--})(window,document,'script','//www.google-analytics.com/analytics.js','ga');-->
+
+    <!--ga('create', 'UA-62962703-1', 'auto');-->
+    <!--ga('send', 'pageview');-->
+<!--</script>-->
+
+
+</body>
+</html>
+
